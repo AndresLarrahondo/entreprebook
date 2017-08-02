@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-
+   @books = Book.all
   end
 
   def new
@@ -24,6 +24,11 @@ class BooksController < ApplicationController
   end
 
   def destroy
+
+  end
+
+  private
+  def books
 
   end
 end
