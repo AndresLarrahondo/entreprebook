@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   end
 
   def create
-
+  
   end
 
   def edit
@@ -28,7 +28,7 @@ class BooksController < ApplicationController
   end
 
   private
-  def books
-
+  def books_params
+    params.require(:book).permit(:name, :url, :description)
   end
 end
