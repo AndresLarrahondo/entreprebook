@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1 class="lead text-center">Publica tu Libro</h1>
+      <%= form_for @book do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "Nombre"%>
+        <%= f.text_field :name, class: "form-control", placeholder: "Ingresa el nombre del book" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :url, "Ingresa la url de tu book"%>
+        <%= f.url_field :url, class: "form-control", placeholder: "Ingresa la url del book" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :description, "Ingresa el detalle de tu book"%>
+        <%= f.text_area :description, class: "form-control", placeholder: "Ingresa detalles de tu book" %>
+      </div>
+      <div>
+        <%= f.submit "Publica tu book", class: "btn btn-default btn-block" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
