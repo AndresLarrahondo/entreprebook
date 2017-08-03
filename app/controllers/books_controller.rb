@@ -8,7 +8,10 @@ class BooksController < ApplicationController
   end
 
   def create
+   @book = Book.new(books_params)
+   @book.save
 
+   redirect_to books_path, notice: "Haz registrado tu Book con éxito"
   end
 
   def edit
