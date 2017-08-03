@@ -15,7 +15,7 @@
         <% @books.each do |book| %>
          <tr>
            <td><%= book.id %></td>
-           <td><%= book.name %></td>
+           <td><%= link_to book.name, book %></td>
            <td><%= book.url %></td>
            <td><%= book.description %></td>
          </tr>
