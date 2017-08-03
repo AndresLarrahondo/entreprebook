@@ -18,7 +18,10 @@
            <td><%= link_to book.name, book %></td>
            <td><%= book.url %></td>
            <td><%= book.description %></td>
-           <td><a href="<%= edit_book_path(book) %>"><span class="label  label-primary">Editar</span></a></td>
+           <td>
+             <a href="<%= edit_book_path(book) %>"><span class="label  label-primary">Editar</span></a>
+             <%= link_to "Eliminar", book, method: :delete, data:  {confirm: "Estas seguro ?"}, class: "label label-danger" %>
+           </td>
          </tr>
         <% end %>
       </table>
