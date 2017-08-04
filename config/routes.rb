@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # Session de Usuarios
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 
   #Crud productos
   resources :books #Rutas libros
