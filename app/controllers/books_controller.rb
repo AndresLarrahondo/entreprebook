@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :private_access, except: [:index, :show]
   def index
    @books = Book.all
   end
