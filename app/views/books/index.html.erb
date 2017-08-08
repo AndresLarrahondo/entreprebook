@@ -1,34 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <h1>Book</h1>
-      <% if signed_in? %>
-      <div class="text-right">
-        <%= link_to "Publica Book", new_book_path, class: "btn btn-default"%>
-      </div>
-      <% end %>
-      <table class="table">
-        <tr>
-          <th>Id</th>
-          <th>Nombre</th>
-          <th>Url</th>
-          <th>Descripción</th>
-        </tr>
+    <div class="col-sm-10 col-sm-offset-1">
+
+      <div class="products">
         <% @books.each do |book| %>
-         <tr>
-           <td><%= book.id %></td>
-           <td><%= link_to book.name, book %></td>
-           <td><%= book.url %></td>
-           <td><%= book.description %></td>
-           <td>
-             <% if signed_in? %>
-               <a href="<%= edit_book_path(book) %>"><span class="label  label-primary">Editar</span></a>
-               <%= link_to "Eliminar", book, method: :delete, data:  {confirm: "Estas seguro ?"}, class: "label label-danger" %>
-             <% end %>
-           </td>
-         </tr>
+        <div class="product clearfix">
+          <div class="product-details">
+          <span class="product-title"><%= link_to book.name, book %></span>
+          <span class="product-description"><%= book.description%></span>
+          </div>
+        </div>
         <% end %>
-      </table>
+      </div>
     </div>
   </div>
 </div>
