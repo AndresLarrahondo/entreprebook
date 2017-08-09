@@ -5,11 +5,11 @@
 
       <% if @book.errors.any? %>
         <div class="alert alert-danger">
-          <uk>
+          <ul>
             <% @book.errors.full_messages.each do |msg|%>
              <li> <%= msg %></li>
-            <% end %> 
-          </uk>
+            <% end %>
+          </ul>
         </div>
       <% end %>
 
