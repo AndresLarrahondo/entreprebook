@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   #Crud productos
   #Rutas libros
   resources :books do
+    resource :vote, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
