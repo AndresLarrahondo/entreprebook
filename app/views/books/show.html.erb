@@ -19,6 +19,26 @@
         </div>
         <div class="comments">
           <h2>Comentarios</h2>
+          <% @book.comments.each do |comment|%>
+           <div class="panel panel-default">
+             <header class="panel-heading">
+               <img src="<%= Gravatar.new("#{comment.user.email}").image_url %>" class="img-circle">
+               <%= comment.user.name %>
+               <div class="panel-body"><%= comment.body %></div>
+             </header>
+           </div>
+          <% end %>
+
+          <% if signed_in? %>
+           <%= form_for [@book, @book.comments.build] do |f| %>
+           <div class="form-group">
+             <%= f.text_area :body, class: "form-control", placeholder: "Agrega Comentario" %>
+           </div>
+           <div class="actions text-right">
+             <%= f.submit "Comentar", class: "btn btn-default"%>
+           </div>
+           <% end %>
+          <% end %>
         </div>
       </div>
     </div>

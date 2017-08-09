@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   #Crud productos
-  resources :books #Rutas libros
+  #Rutas libros
+  resources :books do
+    resources :comments, only: [:create]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
