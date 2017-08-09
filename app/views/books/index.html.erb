@@ -9,6 +9,10 @@
           <span class="product-title"><%= link_to book.name, book %></span>
           <span class="product-description"><%= book.description%></span>
           </div>
+          <div class="product-comments">
+            <span class="glyphicon glyphicon-comment"></span>
+            <span class="comment-count"><%= book.comments.count %></span>
+          </div>
         </div>
         <% end %>
       </div>
