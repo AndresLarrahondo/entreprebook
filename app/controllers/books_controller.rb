@@ -10,6 +10,7 @@ class BooksController < ApplicationController
 
   def create
    @book = Book.new(books_params)
+   @book.user = current_user
     if @book.save
 
         redirect_to books_path, notice: "Haz registrado tu Book con éxito"
