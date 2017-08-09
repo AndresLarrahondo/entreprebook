@@ -5,6 +5,17 @@
       <div class="products">
         <% @books.each do |book| %>
         <div class="product clearfix">
+          <% if book.voted_by? current_user %>
+          <%= link_to book_vote_path(book), method: :delete, class: "product-upvote upvote-active" do %>
+          <span class="upvote-arrow"></span>
+          <span class="upvote-count"><%= book.votes.count %></span>
+          <% end %>
+          <% else %>
+           <%= link_to book_vote_path(book), method: :post, class: "product-upvote" do %>
+            <span class="upvote-arrow"></span>
+            <span class="upvote-count"><%= book.votes.count %></span>
+           <% end %>
+           <% end %>
           <div class="product-details">
           <span class="product-title"><%= link_to book.name, book %></span>
           <span class="product-description"><%= book.description%></span>
