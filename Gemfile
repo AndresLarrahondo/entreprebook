@@ -12,7 +12,7 @@ gem 'rails', '~> 5.0.4'
 gem 'pg', '~> 0.18'
 gem 'rails_12factor', group: :production
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.7.1'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'gravatar-ultimate'
+gem 'annotate'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
